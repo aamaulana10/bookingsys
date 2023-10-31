@@ -8,7 +8,6 @@ import (
 
 func CreateUser(db *gorm.DB, User *User) (err error) {
 
-	err = db.Debug().Model(&User{}).Where("id = ?", p.AuthorID).Take(&p.Author).Error
 	err = db.Create(User).Error
 	if err != nil {
 		return err
